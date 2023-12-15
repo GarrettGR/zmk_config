@@ -41,8 +41,8 @@
 
         raise_layer_2 {
             bindings = <
-&trans  &kp C_VOL_DN          &kp C_VOLUME_UP       &kp K_MUTE   &trans  &trans    &trans  &trans    &kp PAGE_UP    &trans   &trans  &trans
-&trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_SLEEP  &trans  &trans    &trans  &kp HOME  &kp PAGE_DOWN  &kp END  &trans  &trans
+&trans  &kp C_VOL_DN          &kp C_VOLUME_UP       &kp C_MUTE   &trans  &trans    &trans  &trans    &kp PAGE_UP    &trans   &trans  &trans
+&trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_SLEEP  &trans  &trans    &trans  &kp HOME  &kp PAGE_DOWN  &kp END  &trans  &trans
 &trans  &trans                &trans                &trans       &trans  &trans    &trans  &trans    &trans         &trans   &trans  &trans
                                                     &trans       &trans  &trans    &trans  &trans    &trans
             >;
