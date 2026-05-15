@@ -28,6 +28,7 @@
         inherit src zephyrDepsHash;
         board = "nice_nano//zmk";
         shield = "corne_%PART%";
+        enableZmkStudio = true;
         meta = {
           description = "Corne ZMK firmware (left + right)";
           license = nixpkgs.lib.licenses.mit;
@@ -51,8 +52,13 @@
       update = zmk-nix.packages.${system}.update;
     });
 
-    devShells = forAllSystems (system: {
-      default = zmk-nix.devShells.${system}.default;
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      default = pkgs.mkShell {
+        inputsFrom = [ zmk-nix.devShells.${system}.default ];
+        packages = [ pkgs.zmk-studio ];
+      };
     });
   };
 }
